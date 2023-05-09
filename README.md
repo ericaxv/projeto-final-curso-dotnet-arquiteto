@@ -1,2 +1,3 @@
-# projeto-final-curso-dotnet-arquiteto
+# Projeto Final do Curso Arquiteto Dotnet Coti Informática
 Projeto final do Curso Arquiteto Dotnet 
+- Em desenvolvimento...
