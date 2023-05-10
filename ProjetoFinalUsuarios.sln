@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoFinalUsuarios", "ProjetoFinalUsuarios\ProjetoFinalUsuarios.csproj", "{17EF9A36-33BD-40CE-8B17-57A6C8ABF62F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoFinalUsuarios", "ProjetoFinalUsuarios\ProjetoFinalUsuarios.csproj", "{17EF9A36-33BD-40CE-8B17-57A6C8ABF62F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- API", "1- API", "{A4A3A215-1528-42F3-A216-6294CBF51C62}"
 EndProject
@@ -17,13 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.3 - Infrastructure", "2.3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - TDD", "3 - TDD", "{BB23850D-5B58-4C97-BE1B-7DD10A2216D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoFinalUsuarios.Application", "ProjetoFinalUsuarios.Application\ProjetoFinalUsuarios.Application.csproj", "{7E5F7F40-1778-4DB6-85DB-D2C9094C201F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoFinalUsuarios.Application", "ProjetoFinalUsuarios.Application\ProjetoFinalUsuarios.Application.csproj", "{7E5F7F40-1778-4DB6-85DB-D2C9094C201F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoFinalUsuarios.Domain", "ProjetoFinalUsuarios.Domain\ProjetoFinalUsuarios.Domain.csproj", "{E802742B-676E-41AB-A783-1D00CE0D00E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoFinalUsuarios.Domain", "ProjetoFinalUsuarios.Domain\ProjetoFinalUsuarios.Domain.csproj", "{E802742B-676E-41AB-A783-1D00CE0D00E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoFinalUsuarios.Infra.Data", "ProjetoFinalUsuarios.Infra.Data\ProjetoFinalUsuarios.Infra.Data.csproj", "{7167474C-2924-4ED0-8B26-61899224B413}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoFinalUsuarios.Infra.Data", "ProjetoFinalUsuarios.Infra.Data\ProjetoFinalUsuarios.Infra.Data.csproj", "{7167474C-2924-4ED0-8B26-61899224B413}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoFinalUsuarios.Tests", "ProjetoFinalUsuarios.Tests\ProjetoFinalUsuarios.Tests.csproj", "{8534FB12-4B8B-42DB-9CBD-3C1D330BB5E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoFinalUsuarios.Tests", "ProjetoFinalUsuarios.Tests\ProjetoFinalUsuarios.Tests.csproj", "{8534FB12-4B8B-42DB-9CBD-3C1D330BB5E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoFinalUsuarios.Infra.Messages", "ProjetoFinalUsuarios.Infra.Messages\ProjetoFinalUsuarios.Infra.Messages.csproj", "{9CC2760B-7799-4927-A7E5-554938F005B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{8534FB12-4B8B-42DB-9CBD-3C1D330BB5E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8534FB12-4B8B-42DB-9CBD-3C1D330BB5E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8534FB12-4B8B-42DB-9CBD-3C1D330BB5E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CC2760B-7799-4927-A7E5-554938F005B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC2760B-7799-4927-A7E5-554938F005B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC2760B-7799-4927-A7E5-554938F005B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC2760B-7799-4927-A7E5-554938F005B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{E802742B-676E-41AB-A783-1D00CE0D00E0} = {F5AB380F-CF6D-48DB-9A71-6723BC6AB3F5}
 		{7167474C-2924-4ED0-8B26-61899224B413} = {CB1D0D93-0E1D-419E-9518-FCC8F3A6A1F2}
 		{8534FB12-4B8B-42DB-9CBD-3C1D330BB5E6} = {BB23850D-5B58-4C97-BE1B-7DD10A2216D3}
+		{9CC2760B-7799-4927-A7E5-554938F005B9} = {CB1D0D93-0E1D-419E-9518-FCC8F3A6A1F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C58769DB-9AF1-407D-B8DC-CB77759610B0}

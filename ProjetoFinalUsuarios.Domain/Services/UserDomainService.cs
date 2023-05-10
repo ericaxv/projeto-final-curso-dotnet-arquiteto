@@ -30,17 +30,8 @@ namespace ProjetoFinalUsuarios.Domain.Services
             DomainException.When(
                 _userRepository.GetByEmail(user.Email) != null,
                      $"O email {user.Email} já está cadastrado no sistema, tente outro!");
-            var newUser = new User
-            {
-                Id = Guid.NewGuid(),
-                Name = user.Name,
-                Email = user.Email,
-                Password= user.Password,
-                Phone= user.Phone,
-                DataHoraCriacao = DateTime.Now
-            };
-
-            _userRepository.Create(newUser);
+       
+            _userRepository.Create(user);
         }
 
         public void Dispose()
