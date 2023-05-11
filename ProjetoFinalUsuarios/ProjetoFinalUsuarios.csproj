@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProjetoFinalUsuarios.Application\ProjetoFinalUsuarios.Application.csproj" />
     <ProjectReference Include="..\ProjetoFinalUsuarios.Infra.Data\ProjetoFinalUsuarios.Infra.Data.csproj" />
   </ItemGroup>
 
