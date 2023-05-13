@@ -7,6 +7,7 @@ using ProjetoFinalUsuarios.Domain.Entities;
 using ProjetoFinalUsuarios.Domain.Interfaces.Services;
 using ProjetoFinalUsuarios.Infra.Messages.Models;
 using ProjetoFinalUsuarios.Infra.Messages.Producers;
+using ProjetoFinalUsuarios.Infra.Messages.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,13 @@ namespace ProjetoFinalUsuarios.Application.Services
 
             var _messageQueueModel = new MessageQueueModel
             {
-                Conteudo = JsonConvert.SerializeObject(user)
+                Tipo = TipoMensagem.CONFIRMACAO_DE_CADASTRO,
+                Conteudo = JsonConvert.SerializeObject(new UserMessageVO
+                {
+                    Id = user.Id,
+                    Name = user.Name,
+                    Email= user.Email
+                })
             };
 
             _messageQueueProducer.Create(_messageQueueModel);

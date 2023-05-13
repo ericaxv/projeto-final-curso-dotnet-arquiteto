@@ -1,4 +1,5 @@
 using ProjetoFinalUsuarios;
+using ProjetoFinalUsuarios.Infra.Messages.Consumer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ Setup.AddRegisterServices(builder);
 Setup.AddEntityFrameworkServices(builder);
 Setup.AddMessageServices(builder);
 Setup.AddAutoMapperServices(builder);
+
+builder.Services.AddHostedService<MessageQueueConsumer>();
 
 var app = builder.Build();
 

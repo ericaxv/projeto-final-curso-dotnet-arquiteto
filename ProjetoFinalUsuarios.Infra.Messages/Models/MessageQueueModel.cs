@@ -23,5 +23,16 @@ namespace ProjetoFinalUsuarios.Infra.Messages.Models
         /// Data e hora de escrita da mensagem na fila
         /// </summary>
         public DateTime? DataHoraCriacao { get; set; } = DateTime.Now;
+
+        public TipoMensagem Tipo { get; set; }
+    }
+
+    /// <summary>
+    /// Tipo da mensagem gravada na fila
+    /// </summary>
+    public enum TipoMensagem
+    {
+        CONFIRMACAO_DE_CADASTRO = 1,
+        RECUPERACAO_DE_SENHA = 2
     }
 }
