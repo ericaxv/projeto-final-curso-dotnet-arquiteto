@@ -10,10 +10,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+Setup.AddSwagger(builder);
 Setup.AddRegisterServices(builder);
 Setup.AddEntityFrameworkServices(builder);
 Setup.AddMessageServices(builder);
 Setup.AddAutoMapperServices(builder);
+Setup.AddJwtBearerSecurity(builder);
 
 builder.Services.AddHostedService<MessageQueueConsumer>();
 
@@ -31,3 +33,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+//Declaração publica da classe
+public partial class Program { }

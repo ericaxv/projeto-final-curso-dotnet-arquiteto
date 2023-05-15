@@ -5,6 +5,7 @@ using ProjetoFinalUsuarios.Application.Commands;
 using ProjetoFinalUsuarios.Application.Interfaces;
 using ProjetoFinalUsuarios.Domain.Entities;
 using ProjetoFinalUsuarios.Domain.Interfaces.Services;
+using ProjetoFinalUsuarios.Domain.Models;
 using ProjetoFinalUsuarios.Infra.Messages.Models;
 using ProjetoFinalUsuarios.Infra.Messages.Producers;
 using ProjetoFinalUsuarios.Infra.Messages.ValueObjects;
@@ -29,6 +30,20 @@ namespace ProjetoFinalUsuarios.Application.Services
             _userDomainService = userDomainService;
             _messageQueueProducer = messageQueueProducer;
             _mapper = mapper;
+        }
+
+        public AuthorizationModel AutenticarUsuario(AutenticarUserCommand command)
+        { 
+            var autenticacao = _userDomainService
+                .AutenticarUsuário(command.Email, command.Password);
+
+            return new AuthorizationModel(){
+                Id = autenticacao.Id,
+                Name = autenticacao.Name, 
+                Email = autenticacao.Email,
+                DataHoraAcesso = autenticacao.DataHoraAcesso,
+                AccessToken= autenticacao.AccessToken
+            };
         }
 
         public void CriarUsuario(CreateUserCommand command)
@@ -58,10 +73,21 @@ namespace ProjetoFinalUsuarios.Application.Services
             _messageQueueProducer.Create(_messageQueueModel);
 
         }
+
+        public PasswordRecoverModel RecoverPassword(PasswordRecoverCommand command)
+        {
+            var newPassword = _userDomainService.RecoverPassword(command.Email);
+            return new PasswordRecoverModel 
+            { 
+                Password = newPassword.Password 
+            };
+        }
         public void Dispose()
         {
             _userDomainService.Dispose();
         }
+
+    
     }
 } 
     

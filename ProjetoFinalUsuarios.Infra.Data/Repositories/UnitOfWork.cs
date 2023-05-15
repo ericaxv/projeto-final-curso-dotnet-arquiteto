@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+using ProjetoFinalUsuarios.Domain.Interfaces.Repositories;
+using ProjetoFinalUsuarios.Infra.Data.Contexts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,15 +26,17 @@ namespace ProjetoFinalUsuarios.Infra.Data.Repositories
         {
             _dbContextTransaction.Commit();
         }
-        public void RollBack()
-        {
-            _dbContextTransaction.Rollback();
-        }
-        public IUsuarioRepository UsuarioRepository
-            => new UsuarioRepository(_sqlServerContext);
+
+        public IUserRepository userRepository => new UserRepository(_sqlServerContext);
+
         public void Dispose()
         {
             _sqlServerContext.Dispose();
+        }
+
+        public void Rollback()
+        {
+            _dbContextTransaction.Rollback();
         }
     }
 }

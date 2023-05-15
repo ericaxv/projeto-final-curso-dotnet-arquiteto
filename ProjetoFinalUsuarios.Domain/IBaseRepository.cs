@@ -15,7 +15,7 @@ namespace ProjetoFinalUsuarios.Domain
         where TEntity : class
     {
         void Create(TEntity entity);
-        void Update(TEntity entity);
+        void Update(TEntity entity, TEntity entityToUpdate);
         void Delete(TEntity entity);
         List<TEntity> GetAll();
         TEntity GetById(TKey id);

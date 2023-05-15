@@ -32,9 +32,14 @@ namespace ProjetoFinalUsuarios.Infra.Data.Repositories
             _sqlServerContext.SaveChanges();
         }
 
-        public virtual void Update(TEntity entity)
+        public virtual void Update(TEntity entity, TEntity entityToUpdate)
         {
-            _sqlServerContext.Entry(entity).State = EntityState.Modified;
+            _sqlServerContext.Entry(entity).State = EntityState.Deleted;
+            _sqlServerContext.Entry(entityToUpdate).State = EntityState.Added;
+            //_sqlServerContext.Entry(entity).CurrentValues.SetValues(entityToUpdate);
+
+            //_sqlServerContext.Update(entityToUpdate);
+
             _sqlServerContext.SaveChanges();
         }
 

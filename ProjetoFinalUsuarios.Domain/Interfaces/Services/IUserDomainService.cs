@@ -1,4 +1,5 @@
 ﻿using ProjetoFinalUsuarios.Domain.Entities;
+using ProjetoFinalUsuarios.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,20 @@ namespace ProjetoFinalUsuarios.Domain.Interfaces.Services
         /// </summary>
         /// <param name="user">Objeto User.</param>
         void CreateUser(User user);
+
+        /// <summary>
+        /// Método para realizar autenticação do usuário. 
+        /// </summary>
+        /// <param name="email">Email</param>
+        /// <param name="password">password</param>
+        /// <returns></returns>
+        AuthorizationModel AutenticarUsuário(string email, string password);
+
+        /// <summary>
+        /// Método para gerar nova senha
+        /// </summary>
+        /// <param name="email">Email</param>
+        /// <returns>Nova senha gerada</returns>
+        PasswordRecoverModel RecoverPassword(string email);
     }
 }

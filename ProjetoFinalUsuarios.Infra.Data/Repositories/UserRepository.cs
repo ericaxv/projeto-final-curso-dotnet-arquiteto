@@ -1,13 +1,7 @@
-﻿using ProjetoFinalUsuarios.Domain;
-using ProjetoFinalUsuarios.Domain.Entities;
+﻿using ProjetoFinalUsuarios.Domain.Entities;
 using ProjetoFinalUsuarios.Domain.Interfaces.Repositories;
 using ProjetoFinalUsuarios.Infra.Data.Contexts;
 using ProjetoFinalUsuarios.Infra.Data.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoFinalUsuarios.Infra.Data.Repositories
 {
@@ -48,14 +42,22 @@ namespace ProjetoFinalUsuarios.Infra.Data.Repositories
                    .FirstOrDefault(x => x.Email.Equals( email));
         }
 
+        public User GetByEmailAndPassword(string email, string password)
+        {
+            var passwordEncrypt = MD5Helper.Encrypt(password);
+            return _sqlServerContext.User.SingleOrDefault(x => x.Email.Equals(email) 
+                                             && x.Password.Equals(passwordEncrypt));
+        }
+
         public User GetById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(User entity)
+        public void Update(User entity, User entityToUpdate)
         {
-            throw new NotImplementedException();
+            entityToUpdate.Password = MD5Helper.Encrypt(entityToUpdate.Password);
+            base.Update(entity, entityToUpdate);
         }
     }
 }

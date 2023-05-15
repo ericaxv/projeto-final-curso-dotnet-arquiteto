@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
@@ -14,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ProjetoFinalUsuarios.Application\ProjetoFinalUsuarios.Application.csproj" />
     <ProjectReference Include="..\ProjetoFinalUsuarios.Infra.Data\ProjetoFinalUsuarios.Infra.Data.csproj" />
+    <ProjectReference Include="..\ProjetoFinalUsuarios.Infra.Security\ProjetoFinalUsuarios.Infra.Security.csproj" />
   </ItemGroup>
 
 </Project>

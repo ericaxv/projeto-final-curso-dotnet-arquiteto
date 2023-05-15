@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Class1.cs" />
+    <Compile Remove="Helpers\PasswordGenerator.cs" />
     <Compile Remove="Migrations\SqlServerContextModelSnapshot.cs" />
-    <Compile Remove="Repositories\UnitOfWork.cs" />
+    <Compile Remove="Repositories\IUnitOfWork.cs" />
   </ItemGroup>
 	
   <ItemGroup>
