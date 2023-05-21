@@ -1,4 +1,5 @@
-﻿using ProjetoFinalUsuarios.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoFinalUsuarios.Domain.Entities;
 using ProjetoFinalUsuarios.Domain.Interfaces.Repositories;
 using ProjetoFinalUsuarios.Infra.Data.Contexts;
 using ProjetoFinalUsuarios.Infra.Data.Helpers;
@@ -37,6 +38,7 @@ namespace ProjetoFinalUsuarios.Infra.Data.Repositories
 
         public User GetByEmail(string email)
         {
+            _sqlServerContext.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             return _sqlServerContext
                    .User
                    .FirstOrDefault(x => x.Email.Equals( email));
@@ -54,10 +56,10 @@ namespace ProjetoFinalUsuarios.Infra.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public void Update(User entity, User entityToUpdate)
+        public void Update(User entity)
         {
-            entityToUpdate.Password = MD5Helper.Encrypt(entityToUpdate.Password);
-            base.Update(entity, entityToUpdate);
+            entity.Password = MD5Helper.Encrypt(entity.Password);
+            base.Update(entity);
         }
     }
 }

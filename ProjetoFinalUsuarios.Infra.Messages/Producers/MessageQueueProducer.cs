@@ -24,9 +24,7 @@ namespace ProjetoFinalUsuarios.Infra.Messages.Producers
             //definindo a conexão com o servidor de mensageria (broker)
             _connectionFactory = new ConnectionFactory
             {
-                HostName = _messageSettings.Host,
-                UserName = _messageSettings.Username,
-                Password = _messageSettings.Password,
+                Uri = new Uri(_messageSettings.Host)
             };
         }
 

@@ -32,13 +32,9 @@ namespace ProjetoFinalUsuarios.Infra.Data.Repositories
             _sqlServerContext.SaveChanges();
         }
 
-        public virtual void Update(TEntity entity, TEntity entityToUpdate)
+        public virtual void Update(TEntity entity)
         {
-            _sqlServerContext.Entry(entity).State = EntityState.Deleted;
-            _sqlServerContext.Entry(entityToUpdate).State = EntityState.Added;
-            //_sqlServerContext.Entry(entity).CurrentValues.SetValues(entityToUpdate);
-
-            //_sqlServerContext.Update(entityToUpdate);
+            _sqlServerContext.Entry(entity).State = EntityState.Modified;
 
             _sqlServerContext.SaveChanges();
         }
@@ -56,6 +52,7 @@ namespace ProjetoFinalUsuarios.Infra.Data.Repositories
 
         public virtual TEntity GetById(TKey id)
         {
+            _sqlServerContext.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             return _sqlServerContext.Set<TEntity>().Find(id);
         }
 

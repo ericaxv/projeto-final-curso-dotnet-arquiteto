@@ -73,7 +73,7 @@ namespace ProjetoFinalUsuarios.Domain.Services
 
             var userToUpdate = new User()
             {
-                Id = Guid.NewGuid(),
+                Id = user.Id,
                 Name = user.Name,
                 Email = user.Email,
                 Phone= user.Phone,
@@ -81,7 +81,7 @@ namespace ProjetoFinalUsuarios.Domain.Services
                 Password = passwordRandom
             };
 
-            _unitOfWork.userRepository.Update(user, userToUpdate);
+            _unitOfWork.userRepository.Update(userToUpdate);
 
             return new PasswordRecoverModel 
             { 
